@@ -1,1 +1,1 @@
-Web Server make with Go
+Basic Web Server make with Go
