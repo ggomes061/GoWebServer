@@ -33,7 +33,7 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "hello!")
 }
 
-func lustHandler(w http.ResponseWriter, r *http.Request) {
+func testHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path != "/lust" {
 		http.Error(w, "404 not found", http.StatusNotFound)
 		return
@@ -52,7 +52,7 @@ func main() {
 	http.Handle("/", fileServer)
 	http.HandleFunc("/form", formHandler)
 	http.HandleFunc("/hello", helloHandler)
-	http.HandleFunc("/lust", lustHandler)
+	http.HandleFunc("/test", testHandler)
 
 	fmt.Printf("Starting server at port 8080\n")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
